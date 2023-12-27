@@ -9,6 +9,7 @@ import {
 import { Game } from '../hooks/useGame';
 import PlatformIconsList from './PlatformIconsList';
 import CriticScore from './CriticScore';
+import getCropImgURL from '../services/img-url';
 
 interface Props {
   game: Game;
@@ -23,7 +24,7 @@ const GameCard = ({ game }: Props) => {
         minHeight={'300px'}
         backgroundColor={'gray.800'}
       >
-        <Image src={game.background_image} maxHeight={'60%'} />
+        <Image src={getCropImgURL(game.background_image)} maxHeight={'60%'} />
         <CardBody>
           <Heading fontSize={'2xl'}>{game.name}</Heading>
           <HStack justifyContent={'space-between'}>
