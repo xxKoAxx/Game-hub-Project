@@ -9,8 +9,8 @@ import {
 const GameCardSkeleton = () => {
   return (
     <DarkMode>
-      <Card height='300px' width='250px'>
-        <Skeleton height='60%'></Skeleton>
+      <Card>
+        <Skeleton height='200px'></Skeleton>
         <CardBody>
           <SkeletonText></SkeletonText>
         </CardBody>
