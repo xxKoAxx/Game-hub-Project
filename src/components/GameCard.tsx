@@ -18,21 +18,16 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <DarkMode>
-      <Card
-        borderRadius={'lg'}
-        overflow={'hidden'}
-        minHeight={'300px'}
-        backgroundColor={'gray.800'}
-      >
-        <Image src={getCropImgURL(game.background_image)} maxHeight={'60%'} />
-        <CardBody>
-          <Heading fontSize={'2xl'}>{game.name}</Heading>
+      <Card backgroundColor='#202020'>
+        <Image src={getCropImgURL(game.background_image)} />
+        <CardBody paddingTop='10px'>
           <HStack justifyContent={'space-between'}>
             <PlatformIconsList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />
             <CriticScore score={game.metacritic}></CriticScore>
           </HStack>
+          <Heading fontSize={'lg'}>{game.name}</Heading>
         </CardBody>
       </Card>
     </DarkMode>
