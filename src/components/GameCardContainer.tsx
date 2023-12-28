@@ -3,11 +3,17 @@ import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
+  width?: string;
 }
 
-const GameCardContainer = ({ children }: Props) => {
+const GameCardContainer = ({ children, width }: Props) => {
   return (
-    <Box borderRadius='lg' overflow='hidden' width='300px'>
+    <Box
+      borderRadius='lg'
+      overflow='hidden'
+      width={width}
+      backgroundColor='#202020'
+    >
       {children}
     </Box>
   );
