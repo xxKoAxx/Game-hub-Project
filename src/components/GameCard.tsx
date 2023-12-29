@@ -18,7 +18,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <DarkMode>
-      <Card backgroundColor='#202020'>
+      <Card backgroundColor='#202020' boxShadow='none'>
         <Image src={getCropImgURL(game.background_image)} />
         <CardBody paddingTop='10px'>
           <HStack justifyContent={'space-between'}>

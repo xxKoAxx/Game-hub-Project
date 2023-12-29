@@ -15,8 +15,7 @@ const config: ThemeConfig = {
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
-      color: mode('#151515', 'whiteAlpha.900')(props),
-      bg: mode('whiteAlpha.900', '#151515')(props),
+      bg: mode('white', '#151515')(props),
     },
   }),
 };

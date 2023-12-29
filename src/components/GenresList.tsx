@@ -10,7 +10,7 @@ import useGenres, { Genres } from '../hooks/useGenres';
 import getCropImgURL from '../services/img-url';
 
 interface Props {
-  onSelectGenre: (genre: Genres) => void;
+  onSelectGenre: (genre: Genres | null) => void;
   selectedGenre?: Genres | null;
 }
 
@@ -36,7 +36,9 @@ const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
                 fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
                 variant='link'
                 onClick={() => {
-                  onSelectGenre(genre);
+                  selectedGenre?.id === genre.id
+                    ? onSelectGenre(null)
+                    : onSelectGenre(genre);
                 }}
               >
                 {genre.name}
