@@ -1,4 +1,5 @@
 const getCropImgURL = (imgURL: string) => {
+  if (!imgURL) return '';
   let target = 'media/';
   let targetIndex = imgURL.indexOf(target) + target.length;
   return (
