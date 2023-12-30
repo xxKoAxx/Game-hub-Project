@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
       <Card backgroundColor='#202020' boxShadow='none'>
         <Image src={getCropImgURL(game.background_image)} />
         <CardBody paddingTop='10px'>
-          <HStack justifyContent={'space-between'}>
+          <HStack justifyContent={'space-between'} marginBottom={1}>
             <PlatformIconsList
               platforms={
                 game.parent_platforms &&
