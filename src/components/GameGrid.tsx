@@ -19,7 +19,6 @@ const GameGrid = ({ gameQuery }: Props) => {
         <Text textAlign='center'>{error}</Text>
       ) : (
         <SimpleGrid
-          justifyContent='center'
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
           spacing={5}
           padding='15px'
