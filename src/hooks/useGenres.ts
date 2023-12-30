@@ -1,4 +1,3 @@
-import useData from './useData';
 import genre from '../data/genre';
 
 export interface Genres {

@@ -36,7 +36,12 @@ export default function ScrollToTop() {
           right={['16px', '10px']}
           zIndex={3}
         >
-          <Button size={'sm'} variant='solid' bgColor='gray'>
+          <Button
+            size={'md'}
+            variant='solid'
+            bgColor='gray'
+            borderRadius={'20px'}
+          >
             <IoIosArrowUp />
           </Button>
         </Box>

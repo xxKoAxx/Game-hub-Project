@@ -5,7 +5,6 @@ import {
   Image,
   List,
   ListItem,
-  Spinner,
   useColorModeValue,
 } from '@chakra-ui/react';
 import useGenres, { Genres } from '../hooks/useGenres';
@@ -17,7 +16,7 @@ interface Props {
 }
 
 const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { data, error, isLoading } = useGenres();
+  const { data } = useGenres();
   const textColorMode = useColorModeValue('gray.700', 'whiteAlpha');
   // if (error) return null;
   // if (isLoading) return <Spinner />;

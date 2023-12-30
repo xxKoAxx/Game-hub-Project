@@ -5,7 +5,6 @@ import {
   Tab,
   TabList,
   Tabs,
-  Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { MdOutlineViewDay, MdGridView } from 'react-icons/md';

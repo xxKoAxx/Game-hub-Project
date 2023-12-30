@@ -1,4 +1,3 @@
-import useData from './useData';
 import platform from '../data/platform';
 
 export interface Platform {

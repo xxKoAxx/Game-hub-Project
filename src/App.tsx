@@ -1,12 +1,5 @@
-import { useEffect, useState } from 'react';
-import {
-  Box,
-  Grid,
-  GridItem,
-  HStack,
-  Show,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { useState } from 'react';
+import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
 import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenresList from './components/GenresList';
