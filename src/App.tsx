@@ -21,6 +21,7 @@ export interface GameQuery {
 
 const App = () => {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const [displayOption, setDisplayOption] = useState('grid');
 
   return (
     <>
@@ -69,11 +70,14 @@ const App = () => {
             </HStack>
             <DisplayOption
               onSelectDisplayOption={(displayOption) =>
-                console.log(displayOption)
+                setDisplayOption(displayOption)
               }
             />
           </HStack>
-          <GameGrid gameQuery={gameQuery}></GameGrid>
+          <GameGrid
+            gameQuery={gameQuery}
+            displayOption={displayOption}
+          ></GameGrid>
         </GridItem>
       </Grid>
     </>

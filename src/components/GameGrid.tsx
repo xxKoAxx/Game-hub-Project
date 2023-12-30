@@ -7,9 +7,10 @@ import useGame from '../hooks/useGame';
 
 interface Props {
   gameQuery: GameQuery;
+  displayOption: string;
 }
 
-const GameGrid = ({ gameQuery }: Props) => {
+const GameGrid = ({ gameQuery, displayOption }: Props) => {
   const { data, error, isLoading } = useGame(gameQuery);
   const skeletonNumber = [1, 2, 3, 4, 5, 6];
 
@@ -17,7 +18,8 @@ const GameGrid = ({ gameQuery }: Props) => {
 
   return (
     <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+      justifyItems={displayOption !== 'grid' ? 'center' : ''}
+      columns={displayOption === 'grid' ? { sm: 1, md: 2, lg: 3, xl: 4 } : 1}
       spacing={5}
       padding='15px'
     >
