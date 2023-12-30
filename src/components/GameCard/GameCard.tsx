@@ -6,10 +6,10 @@ import {
   Heading,
   Image,
 } from '@chakra-ui/react';
-import { Game } from '../hooks/useGame';
+import { Game } from '../../hooks/useGame';
 import PlatformIconsList from './PlatformIconsList';
 import CriticScore from './CriticScore';
-import getCropImgURL from '../services/img-url';
+import getCropImgURL from '../../services/img-url';
 
 interface Props {
   game: Game;

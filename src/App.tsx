@@ -4,10 +4,11 @@ import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenresList from './components/GenresList';
 import { Genres } from './hooks/useGenres';
-import PlatformSelector from './components/PlatformSelector';
-import SortSelector from './components/SortSelector';
+import PlatformSelector from './components/Selector/PlatformSelector';
+import OrderBySelector from './components/Selector/OrderBySelector';
 import { Platform } from './hooks/usePlatform';
 import './App.css';
+import GameHeading from './components/GameHeading';
 
 export interface GameQuery {
   // use for simplify states variable declairation
@@ -50,6 +51,7 @@ const App = () => {
           </GridItem>
         </Show>
         <GridItem area='main'>
+          <GameHeading gameQuery={gameQuery} />
           <HStack margin='15px'>
             <PlatformSelector
               selectedPlatform={gameQuery.selectedPlatform}
@@ -57,7 +59,7 @@ const App = () => {
                 setGameQuery({ ...gameQuery, selectedPlatform })
               }
             />
-            <SortSelector
+            <OrderBySelector
               onSelectOrder={(ordering) =>
                 setGameQuery({ ...gameQuery, selectedOrder: ordering })
               }

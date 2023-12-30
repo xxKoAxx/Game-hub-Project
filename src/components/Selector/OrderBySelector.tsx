@@ -6,7 +6,7 @@ interface Props {
   onSelectOrder: (ordering: string) => void;
 }
 
-const SortSelector = ({ onSelectOrder }: Props) => {
+const OrderBySelector = ({ onSelectOrder }: Props) => {
   const [selectedOrder, setSelectedOrder] = useState('');
   const orderToSort = [
     { value: '', label: 'Relevance' },
@@ -41,4 +41,4 @@ const SortSelector = ({ onSelectOrder }: Props) => {
   );
 };
 
-export default SortSelector;
+export default OrderBySelector;
