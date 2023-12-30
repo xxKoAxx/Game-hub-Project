@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
+import { Box, Grid, GridItem, HStack, Show } from '@chakra-ui/react';
 import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenresList from './components/GenresList';
@@ -9,6 +9,7 @@ import OrderBySelector from './components/Selector/OrderBySelector';
 import { Platform } from './hooks/usePlatform';
 import './App.css';
 import GameHeading from './components/GameHeading';
+import DisplayOption from './components/DisplayOption';
 
 export interface GameQuery {
   // use for simplify states variable declairation
@@ -52,16 +53,23 @@ const App = () => {
         </Show>
         <GridItem area='main'>
           <GameHeading gameQuery={gameQuery} />
-          <HStack margin='15px'>
-            <PlatformSelector
-              selectedPlatform={gameQuery.selectedPlatform}
-              onSelectPlatform={(selectedPlatform) =>
-                setGameQuery({ ...gameQuery, selectedPlatform })
-              }
-            />
-            <OrderBySelector
-              onSelectOrder={(ordering) =>
-                setGameQuery({ ...gameQuery, selectedOrder: ordering })
+          <HStack margin='15px' justifyContent='space-between' gap={5}>
+            <HStack>
+              <PlatformSelector
+                selectedPlatform={gameQuery.selectedPlatform}
+                onSelectPlatform={(selectedPlatform) =>
+                  setGameQuery({ ...gameQuery, selectedPlatform })
+                }
+              />
+              <OrderBySelector
+                onSelectOrder={(ordering) =>
+                  setGameQuery({ ...gameQuery, selectedOrder: ordering })
+                }
+              />
+            </HStack>
+            <DisplayOption
+              onSelectDisplayOption={(displayOption) =>
+                console.log(displayOption)
               }
             />
           </HStack>
