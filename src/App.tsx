@@ -1,5 +1,12 @@
-import { useState } from 'react';
-import { Box, Grid, GridItem, HStack, Show } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import {
+  Box,
+  Grid,
+  GridItem,
+  HStack,
+  Show,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenresList from './components/GenresList';
@@ -10,6 +17,7 @@ import { Platform } from './hooks/usePlatform';
 import './App.css';
 import GameHeading from './components/GameHeading';
 import DisplayOption from './components/DisplayOption';
+import ScrollToTopBtn from './components/ScrollToTopBtn';
 
 export interface GameQuery {
   // use for simplify states variable declairation
@@ -80,6 +88,7 @@ const App = () => {
           ></GameGrid>
         </GridItem>
       </Grid>
+      <ScrollToTopBtn />
     </>
   );
 };

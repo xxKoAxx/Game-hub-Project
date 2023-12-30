@@ -18,7 +18,7 @@ const GameGrid = ({ gameQuery, displayOption }: Props) => {
 
   return (
     <SimpleGrid
-      justifyItems={displayOption !== 'grid' ? 'center' : ''}
+      justifyItems='center'
       columns={displayOption === 'grid' ? { sm: 1, md: 2, lg: 3, xl: 4 } : 1}
       spacing={5}
       padding='15px'
