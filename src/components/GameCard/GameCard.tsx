@@ -1,10 +1,10 @@
 import {
   Card,
   CardBody,
-  DarkMode,
   HStack,
   Heading,
   Image,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { Game } from '../../hooks/useGame';
 import PlatformIconsList from './PlatformIconsList';
@@ -17,25 +17,25 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
+  const bg = useColorModeValue('#d3d3d3', '#202020');
+
   return (
-    <DarkMode>
-      <Card backgroundColor='#202020' boxShadow='none'>
-        <Image src={getCropImgURL(game.background_image)} />
-        <CardBody paddingTop='10px'>
-          <HStack justifyContent={'space-between'} marginBottom={1}>
-            <PlatformIconsList
-              platforms={
-                game.parent_platforms &&
-                game.parent_platforms.map((p) => p.platform)
-              }
-            />
-            <CriticScore score={game.metacritic}></CriticScore>
-          </HStack>
-          <Heading fontSize={'lg'}>{game.name}</Heading>
-          <Emoji rating={game.rating_top} />
-        </CardBody>
-      </Card>
-    </DarkMode>
+    <Card backgroundColor={bg}>
+      <Image src={getCropImgURL(game.background_image)} />
+      <CardBody paddingTop='10px'>
+        <HStack justifyContent={'space-between'} marginBottom={1}>
+          <PlatformIconsList
+            platforms={
+              game.parent_platforms &&
+              game.parent_platforms.map((p) => p.platform)
+            }
+          />
+          <CriticScore score={game.metacritic}></CriticScore>
+        </HStack>
+        <Heading fontSize={'lg'}>{game.name}</Heading>
+        <Emoji rating={game.rating_top} />
+      </CardBody>
+    </Card>
   );
 };
 
