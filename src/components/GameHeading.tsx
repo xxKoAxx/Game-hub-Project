@@ -9,7 +9,7 @@ const GameHeading = ({ gameQuery }: Props) => {
   const { selectedGenre, selectedPlatform } = gameQuery;
 
   return (
-    <Heading paddingX='15px' paddingTop='15px'>
+    <Heading paddingX='15px'>
       {selectedPlatform?.name} {selectedGenre?.name} Games
     </Heading>
   );
