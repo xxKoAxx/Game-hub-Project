@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# This is the Game Hub Project for my personal learning
 
 The deployment link: [https://game-hub-project-sand.vercel.app/](https://game-hub-project-sand.vercel.app/)
 
