@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-import { Button, Grid, GridItem, HStack, Show } from '@chakra-ui/react';
+import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
 
-import NavBar from './components/NavBar';
-import GameGrid from './components/GameGrid';
-import GenresList from './components/GenresList';
-import PlatformSelector from './components/Selector/PlatformSelector';
-import OrderBySelector from './components/Selector/OrderBySelector';
 import './App.css';
-import GameHeading from './components/GameHeading';
 import DisplayOption from './components/DisplayOption';
+import GameGrid from './components/GameGrid';
+import GameHeading from './components/GameHeading';
+import GenresList from './components/GenresList';
+import NavBar from './components/NavBar';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
+import OrderBySelector from './components/Selector/OrderBySelector';
+import PlatformSelector from './components/Selector/PlatformSelector';
 import { Genres } from './services/genresService';
 import { Platform } from './services/platformServices';
 

@@ -13,14 +13,8 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery, displayOption }: Props) => {
-  const {
-    data,
-    error,
-    isLoading,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-  } = useGame(gameQuery);
+  const { data, error, isLoading, fetchNextPage, hasNextPage } =
+    useGame(gameQuery);
   const skeletonNumber = [1, 2, 3, 4, 5, 6];
 
   if (error) return <Text textAlign='center'>{error.message}</Text>;
