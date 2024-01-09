@@ -7,7 +7,7 @@ interface Props {
 }
 
 const GameHeading = ({ gameQuery }: Props) => {
-  const { selectedGenreId, selectedPlatform } = gameQuery;
+  const { selectedGenre, selectedPlatform } = gameQuery;
 
   return (
     <Heading paddingX='15px'>
