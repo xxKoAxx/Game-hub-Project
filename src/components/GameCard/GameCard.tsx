@@ -6,11 +6,12 @@ import {
   Image,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { Game } from '../../hooks/useGame';
+
 import PlatformIconsList from './PlatformIconsList';
 import CriticScore from './CriticScore';
 import getCropImgURL from '../../services/img-url';
 import Emoji from './Emoji';
+import { Game } from '../../services/gameServices';
 
 interface Props {
   game: Game;

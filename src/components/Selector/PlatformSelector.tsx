@@ -1,6 +1,8 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { BsChevronDown } from 'react-icons/bs';
-import usePlatform, { Platform } from '../../hooks/usePlatform';
+
+import usePlatform from '../../hooks/usePlatform';
+import { Platform } from '../../services/platformServices';
 
 interface Props {
   selectedPlatform?: Platform | null;
@@ -23,7 +25,7 @@ const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: Props) => {
             <MenuItem key='platform-error'>No platform found</MenuItem>
           ) : (
             data &&
-            data.map((platform) => (
+            data.results.map((platform) => (
               <MenuItem
                 onClick={() => onSelectPlatform(platform)}
                 key={platform.id}

@@ -1,27 +1,34 @@
 import { useState } from 'react';
-import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
+
+import { Button, Grid, GridItem, HStack, Show } from '@chakra-ui/react';
+
 import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenresList from './components/GenresList';
-import { Genres } from './hooks/useGenres';
 import PlatformSelector from './components/Selector/PlatformSelector';
 import OrderBySelector from './components/Selector/OrderBySelector';
-import { Platform } from './hooks/usePlatform';
 import './App.css';
 import GameHeading from './components/GameHeading';
 import DisplayOption from './components/DisplayOption';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
+import { Genres } from './services/genresService';
+import { Platform } from './services/platformServices';
 
 export interface GameQuery {
   // use for simplify states variable declairation
   selectedGenre: Genres | null;
   selectedPlatform: Platform | null;
-  selectedOrder: string | null;
+  selectedOrder: string | '';
   searchQuery: string | null;
 }
 
 const App = () => {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({
+    selectedOrder: '',
+    selectedPlatform: null,
+    selectedGenre: null,
+    searchQuery: null,
+  } as GameQuery);
   const [displayOption, setDisplayOption] = useState('grid');
 
   return (

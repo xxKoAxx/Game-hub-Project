@@ -1,4 +1,5 @@
-import { SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Button, SimpleGrid, Text } from '@chakra-ui/react';
+
 import GameCard from './GameCard/GameCard';
 import GameCardSkeleton from './GameCard/GameCardSkeleton';
 import GameCardContainer from './GameCard/GameCardContainer';
@@ -11,30 +12,49 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery, displayOption }: Props) => {
-  const { data, error, isLoading } = useGame(gameQuery);
+  const {
+    data,
+    error,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useGame(gameQuery);
   const skeletonNumber = [1, 2, 3, 4, 5, 6];
 
-  if (error) return <Text textAlign='center'>{error}</Text>;
+  if (error) return <Text textAlign='center'>{error.message}</Text>;
 
   return (
-    <SimpleGrid
-      justifyItems='center'
-      columns={displayOption === 'grid' ? { sm: 1, md: 2, lg: 3, xl: 4 } : 1}
-      spacing={5}
-      padding='15px'
-    >
-      {isLoading
-        ? skeletonNumber.map((number) => (
-            <GameCardContainer key={number}>
-              <GameCardSkeleton></GameCardSkeleton>
-            </GameCardContainer>
-          ))
-        : data.map((game) => (
-            <GameCardContainer key={game.id}>
-              <GameCard game={game} />
-            </GameCardContainer>
-          ))}
-    </SimpleGrid>
+    <Box padding='15px'>
+      <SimpleGrid
+        justifyItems='center'
+        columns={displayOption === 'grid' ? { sm: 1, md: 2, lg: 3, xl: 4 } : 1}
+        spacing={5}
+      >
+        {isLoading
+          ? skeletonNumber.map((number) => (
+              <GameCardContainer key={number}>
+                <GameCardSkeleton></GameCardSkeleton>
+              </GameCardContainer>
+            ))
+          : data?.pages.map((page) =>
+              page.results.map((game) => (
+                <GameCardContainer key={game.id}>
+                  <GameCard game={game} />
+                </GameCardContainer>
+              ))
+            )}
+      </SimpleGrid>
+      {hasNextPage && (
+        <Button
+          marginY='15px'
+          disabled={isFetchingNextPage}
+          onClick={() => fetchNextPage()}
+        >
+          {isFetchingNextPage ? 'Loading ...' : 'Load more'}
+        </Button>
+      )}
+    </Box>
   );
 };
 export default GameGrid;

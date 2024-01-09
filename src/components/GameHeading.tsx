@@ -1,4 +1,5 @@
 import { Heading } from '@chakra-ui/react';
+
 import { GameQuery } from '../App';
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const GameHeading = ({ gameQuery }: Props) => {
-  const { selectedGenre, selectedPlatform } = gameQuery;
+  const { selectedGenreId, selectedPlatform } = gameQuery;
 
   return (
     <Heading paddingX='15px'>
