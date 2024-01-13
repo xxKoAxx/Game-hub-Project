@@ -6,13 +6,14 @@ import {
   Skeleton,
   SkeletonText,
 } from '@chakra-ui/react';
+import skeletonImage from '../../assets/skeleton.png';
 
 const GameCardSkeleton = () => {
   return (
     <DarkMode>
-      <Card>
-        <Skeleton height='200px'>
-          <Image width='600px' />
+      <Card h={'full'}>
+        <Skeleton>
+          <Image src={skeletonImage} />
         </Skeleton>
         <CardBody>
           <SkeletonText></SkeletonText>

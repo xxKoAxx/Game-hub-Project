@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
   const bg = useColorModeValue('#d3d3d3', '#202020');
 
   return (
-    <Card backgroundColor={bg}>
+    <Card backgroundColor={bg} h={'full'}>
       <Image src={getCropImgURL(game.background_image)} />
       <CardBody paddingTop='10px'>
         <HStack justifyContent={'space-between'} marginBottom={1}>
