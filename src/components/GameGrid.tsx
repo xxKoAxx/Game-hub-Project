@@ -1,21 +1,16 @@
 import { Box, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { GameQuery } from '../App';
 import useGame from '../hooks/useGame';
 import GameCard from './GameCard/GameCard';
 import GameCardContainer from './GameCard/GameCardContainer';
 import GameCardSkeleton from './GameCard/GameCardSkeleton';
+import useDisplayOptionStore from '../statesStore/displayOptionStore';
 
-interface Props {
-  gameQuery: GameQuery;
-  displayOption: string;
-}
-
-const GameGrid = ({ gameQuery, displayOption }: Props) => {
-  const { data, error, isLoading, fetchNextPage, hasNextPage } =
-    useGame(gameQuery);
+const GameGrid = () => {
+  const { data, error, isLoading, fetchNextPage, hasNextPage } = useGame();
   const skeletonNumber = [1, 2, 3, 4, 5, 6];
+  const displayOption = useDisplayOptionStore((s) => s.displayOption);
 
   if (error) return <Text textAlign='center'>{error.message}</Text>;
 

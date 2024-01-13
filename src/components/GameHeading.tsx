@@ -1,13 +1,10 @@
 import { Heading } from '@chakra-ui/react';
 
-import { GameQuery } from '../App';
+import useGameQueryStore from '../statesStore/gameQueryStore';
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GameHeading = ({ gameQuery }: Props) => {
-  const { selectedGenre, selectedPlatform } = gameQuery;
+const GameHeading = () => {
+  const selectedGenre = useGameQueryStore((s) => s.selectedGenre);
+  const selectedPlatform = useGameQueryStore((s) => s.selectedPlatform);
 
   return (
     <Heading paddingX='15px'>

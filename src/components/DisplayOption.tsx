@@ -8,13 +8,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { MdOutlineViewDay, MdGridView } from 'react-icons/md';
+import useDisplayOptionStore from '../statesStore/displayOptionStore';
 
-interface Props {
-  onSelectDisplayOption: (displayOption: string) => void;
-}
-
-const DisplayOption = ({ onSelectDisplayOption }: Props) => {
+const DisplayOption = () => {
   const bg = useColorModeValue('blackAlpha', 'gray');
+  const setDisplayOption = useDisplayOptionStore((s) => s.setDisplayOption);
+
   return (
     <>
       <Show above='sm'>
@@ -26,7 +25,7 @@ const DisplayOption = ({ onSelectDisplayOption }: Props) => {
             variant='soft-rounded'
             colorScheme={bg}
             onChange={(index) =>
-              onSelectDisplayOption(index === 0 ? 'grid' : 'column')
+              setDisplayOption(index === 0 ? 'grid' : 'column')
             }
           >
             <TabList>

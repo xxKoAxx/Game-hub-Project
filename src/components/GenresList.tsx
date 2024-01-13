@@ -11,16 +11,14 @@ import {
 
 import useGenres from '../hooks/useGenres';
 import getCropImgURL from '../services/img-url';
-import { Genres } from '../services/genresService';
+import useGameQueryStore from '../statesStore/gameQueryStore';
 
-interface Props {
-  onSelectGenre: (genre: Genres | null) => void;
-  selectedGenre?: Genres | null;
-}
-
-const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenresList = () => {
   const { data, error, isLoading } = useGenres();
   const textColorMode = useColorModeValue('gray.700', 'whiteAlpha');
+  const setSelectedGenre = useGameQueryStore((s) => s.setSelectedGenre);
+  const selectedGenre = useGameQueryStore((s) => s.selectedGenre);
+
   if (error) return null;
   if (isLoading) return <Spinner />;
   if (!data) return null;
@@ -49,8 +47,8 @@ const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
                   color={textColorMode}
                   onClick={() => {
                     selectedGenre?.id === genre.id
-                      ? onSelectGenre(null)
-                      : onSelectGenre(genre);
+                      ? setSelectedGenre(null)
+                      : setSelectedGenre(genre);
                   }}
                 >
                   {genre.name}
