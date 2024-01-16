@@ -1,6 +1,5 @@
 import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
 
-import './App.css';
 import DisplayOption from './components/DisplayOption';
 import GameGrid from './components/GameGrid';
 import GameHeading from './components/GameHeading';
@@ -20,14 +19,14 @@ const App = () => {
         }}
         templateColumns={{
           base: '1fr',
-          lg: '240px 1fr',
+          lg: '220px 1fr',
         }}
       >
         <GridItem area='nav'>
           <NavBar></NavBar>
         </GridItem>
         <Show above='lg'>
-          <GridItem area='aside' paddingX='15px'>
+          <GridItem area='aside' paddingX='1.5rem'>
             <GenresList />
           </GridItem>
         </Show>

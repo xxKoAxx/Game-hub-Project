@@ -45,6 +45,8 @@ const GenresList = () => {
                   }
                   variant='link'
                   color={textColorMode}
+                  whiteSpace='normal'
+                  textAlign='left'
                   onClick={() => {
                     selectedGenre?.id === genre.id
                       ? setSelectedGenre(null)

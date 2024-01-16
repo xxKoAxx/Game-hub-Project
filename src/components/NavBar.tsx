@@ -1,12 +1,21 @@
-import { HStack, Image } from '@chakra-ui/react';
+import { HStack, Image, useColorModeValue } from '@chakra-ui/react';
 
 import logo from '../assets/logo.webp';
 import ColorModeSwitch from './ColorModeSwitch';
 import SearchInput from './SearchInput';
 
 const NavBar = () => {
+  const bg = useColorModeValue('white', 'gray.900');
+
   return (
-    <HStack padding={'10px'}>
+    <HStack
+      padding='5px 10px 0 10px'
+      position='sticky'
+      top='0'
+      backgroundColor={bg}
+      border='none'
+      zIndex={10}
+    >
       <Image src={logo} boxSize='60px' />
       <SearchInput />
       <ColorModeSwitch></ColorModeSwitch>
