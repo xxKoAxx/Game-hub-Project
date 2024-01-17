@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { MdOutlineViewDay, MdGridView } from 'react-icons/md';
-import useDisplayOptionStore from '../statesStore/displayOptionStore';
+import useDisplayOptionStore from '../../statesStore/displayOptionStore';
 
 const DisplayOption = () => {
   const bg = useColorModeValue('blackAlpha', 'gray');

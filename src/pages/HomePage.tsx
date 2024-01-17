@@ -1,5 +1,5 @@
 import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
-import DisplayOption from '../components/DisplayOption';
+import DisplayOption from '../components/Selector/DisplayOption';
 import GameGrid from '../components/GameGrid';
 import GameHeading from '../components/GameHeading';
 import GenresList from '../components/GenresList';
