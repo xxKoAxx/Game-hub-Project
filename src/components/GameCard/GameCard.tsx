@@ -25,22 +25,22 @@ const GameCard = ({ game }: Props) => {
 
   return (
     <Card backgroundColor={bg} h='full'>
-      <Image src={getCropImgURL(game.background_image)} />
-      <CardBody paddingTop='10px'>
-        <HStack justifyContent={'space-between'} marginBottom={1}>
-          <PlatformIconsList
-            platforms={
-              game.parent_platforms &&
-              game.parent_platforms.map((p) => p.platform)
-            }
-          />
-          <CriticScore score={game.metacritic}></CriticScore>
-        </HStack>
-        <Heading fontSize={'lg'}>
-          <Link to={`/games/${game.slug}`}>{game.name}</Link>
-        </Heading>
-        <Emoji rating={game.rating_top} />
-      </CardBody>
+      <Link to={`/games/${game.slug}`}>
+        <Image src={getCropImgURL(game.background_image)} />
+        <CardBody paddingTop='10px'>
+          <HStack justifyContent={'space-between'} marginBottom={1}>
+            <PlatformIconsList
+              platforms={
+                game.parent_platforms &&
+                game.parent_platforms.map((p) => p.platform)
+              }
+            />
+            <CriticScore score={game.metacritic}></CriticScore>
+          </HStack>
+          <Heading fontSize={'lg'}>{game.name}</Heading>
+          <Emoji rating={game.rating_top} />
+        </CardBody>
+      </Link>
     </Card>
   );
 };

@@ -11,7 +11,6 @@ import { MdOutlineViewDay, MdGridView } from 'react-icons/md';
 import useDisplayOptionStore from '../../statesStore/displayOptionStore';
 
 const DisplayOption = () => {
-  const bg = useColorModeValue('blackAlpha', 'gray');
   const setDisplayOption = useDisplayOptionStore((s) => s.setDisplayOption);
 
   return (
@@ -23,7 +22,7 @@ const DisplayOption = () => {
           </Heading>
           <Tabs
             variant='soft-rounded'
-            colorScheme={bg}
+            colorScheme='gray'
             onChange={(index) =>
               setDisplayOption(index === 0 ? 'grid' : 'column')
             }
