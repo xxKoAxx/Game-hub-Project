@@ -28,7 +28,9 @@ const HomePage = () => {
               <PlatformSelector />
               <OrderBySelector />
             </HStack>
-            <DisplayOption />
+            <Show above='md'>
+              <DisplayOption />
+            </Show>
           </HStack>
           <GameGrid />
         </GridItem>

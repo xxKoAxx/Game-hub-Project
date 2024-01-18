@@ -30,7 +30,11 @@ const GenresList = () => {
         </Heading>
         <List>
           {data?.results.map((genre) => (
-            <ListItem key={genre.id} paddingY='5px'>
+            <ListItem
+              key={genre.id}
+              paddingY='5px'
+              _hover={{ transform: 'scale(1.05)' }}
+            >
               <HStack>
                 <Image
                   src={getCropImgURL(genre.image_background)}

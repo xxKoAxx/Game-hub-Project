@@ -12,6 +12,9 @@ import CriticScore from './CriticScore';
 import getCropImgURL from '../../services/img-url';
 import Emoji from './Emoji';
 import { Game } from '../../services/gameServices';
+import { Link, useNavigate } from 'react-router-dom';
+import useGameDetail from '../../hooks/useGameDetail';
+import useGameQueryStore from '../../statesStore/gameQueryStore';
 
 interface Props {
   game: Game;
@@ -21,7 +24,7 @@ const GameCard = ({ game }: Props) => {
   const bg = useColorModeValue('#d3d3d3', '#202020');
 
   return (
-    <Card backgroundColor={bg} h={'full'}>
+    <Card backgroundColor={bg} h='full'>
       <Image src={getCropImgURL(game.background_image)} />
       <CardBody paddingTop='10px'>
         <HStack justifyContent={'space-between'} marginBottom={1}>
@@ -33,7 +36,9 @@ const GameCard = ({ game }: Props) => {
           />
           <CriticScore score={game.metacritic}></CriticScore>
         </HStack>
-        <Heading fontSize={'lg'}>{game.name}</Heading>
+        <Heading fontSize={'lg'}>
+          <Link to={`/games/${game.slug}`}>{game.name}</Link>
+        </Heading>
         <Emoji rating={game.rating_top} />
       </CardBody>
     </Card>

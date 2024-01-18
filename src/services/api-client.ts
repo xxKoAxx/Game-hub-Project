@@ -24,4 +24,7 @@ export default class ApiClient<T> {
     axiosInstance
       .get<FetchData<T>>(this.endPoint, config)
       .then((res) => res.data);
+
+  getGameDetail = (config?: AxiosRequestConfig) =>
+    axiosInstance.get<T>(this.endPoint, config).then((res) => res.data);
 }

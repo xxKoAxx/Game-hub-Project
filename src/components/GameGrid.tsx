@@ -15,7 +15,7 @@ const GameGrid = () => {
   if (error) return <Text textAlign='center'>{error.message}</Text>;
 
   return (
-    <Box padding='15px'>
+    <Box>
       <InfiniteScroll
         dataLength={
           data?.pages.reduce((acc, cur) => acc + cur.results.length, 0) || 0
@@ -30,6 +30,7 @@ const GameGrid = () => {
             displayOption === 'grid' ? { sm: 1, md: 2, lg: 3, xl: 4 } : 1
           }
           spacing={5}
+          padding='1rem'
         >
           {isLoading
             ? skeletonNumber.map((number) => (
