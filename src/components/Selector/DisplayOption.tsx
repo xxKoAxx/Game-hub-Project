@@ -1,13 +1,5 @@
-import {
-  HStack,
-  Heading,
-  Show,
-  Tab,
-  TabList,
-  Tabs,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import { MdOutlineViewDay, MdGridView } from 'react-icons/md';
+import { HStack, Heading, Show, Tab, TabList, Tabs } from '@chakra-ui/react';
+import { MdGridView, MdOutlineViewDay } from 'react-icons/md';
 import useDisplayOptionStore from '../../statesStore/displayOptionStore';
 
 const DisplayOption = () => {

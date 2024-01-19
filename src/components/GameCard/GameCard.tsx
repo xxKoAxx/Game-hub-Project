@@ -7,14 +7,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import PlatformIconsList from './PlatformIconsList';
-import CriticScore from './CriticScore';
-import getCropImgURL from '../../services/img-url';
-import Emoji from './Emoji';
+import { Link } from 'react-router-dom';
 import { Game } from '../../services/gameServices';
-import { Link, useNavigate } from 'react-router-dom';
-import useGameDetail from '../../hooks/useGameDetail';
-import useGameQueryStore from '../../statesStore/gameQueryStore';
+import getCropImgURL from '../../services/img-url';
+import CriticScore from './CriticScore';
+import Emoji from './Emoji';
+import PlatformIconsList from './PlatformIconsList';
 
 interface Props {
   game: Game;
