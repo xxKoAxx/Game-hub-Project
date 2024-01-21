@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 interface Props {
   children: string;
+  limit: number;
 }
 
-const ExpandableText = ({ children }: Props) => {
+const ExpandableText = ({ children, limit }: Props) => {
   const [expandState, setExpandState] = useState(false);
-  const limit = 300;
 
   if (children.length <= limit) return <Text>{children}</Text>;
 

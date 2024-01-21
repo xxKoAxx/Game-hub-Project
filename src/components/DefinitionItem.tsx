@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 interface Props {
@@ -9,10 +9,12 @@ interface Props {
 const DefinitionItem = ({ term, children }: Props) => {
   return (
     <Box marginY='1rem'>
-      <Heading as='dt' fontSize='md' color='gray'>
+      <Heading as='dt' fontSize='md' color='gray' paddingBottom='0.5rem'>
         {term}
       </Heading>
-      <dd>{children}</dd>
+      <Flex as={'dd'} wrap='wrap' gap={2}>
+        {children}
+      </Flex>
     </Box>
   );
 };
