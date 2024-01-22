@@ -27,7 +27,7 @@ const GameDetailPage = () => {
   else
     return (
       <>
-        <SimpleGrid columns={{ base: 1, md: 2 }}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={2}>
           <GridItem>
             <HStack>
               <PlatformIconsList

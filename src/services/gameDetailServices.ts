@@ -22,6 +22,8 @@ export interface GameDetail {
   genres: Genres[];
   publishers: Publishers[];
   playtime: number;
+  released: Date;
+  updated: Date;
 }
 
 const gameDetailServices = (selectedGameId: number | string | null) => {
