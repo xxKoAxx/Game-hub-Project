@@ -6,17 +6,31 @@ interface Props {
 }
 
 const GameTrailers = ({ selectedGameId }: Props) => {
-  const { data, error, isLoading } = useGameTrailer(selectedGameId || null);
-  let firstVideo = data?.results[0];
+  const {
+    data: trailers,
+    error: trailerError,
+    isLoading: trailerIsLoading,
+  } = useGameTrailer(selectedGameId || null);
 
-  if (error) return null;
-  if (isLoading) return <Spinner></Spinner>;
+  let firstVideo = trailers?.results[0];
 
-  return firstVideo ? (
-    <AspectRatio ratio={16 / 9}>
-      <video poster={firstVideo.preview} src={firstVideo.data.max} controls />
+  if (trailerError || !firstVideo) return null;
+  if (trailerIsLoading) return <Spinner></Spinner>;
+
+  return (
+    <AspectRatio
+      w={'full'}
+      ratio={16 / 9}
+      borderRadius={'1rem'}
+      overflow={'hidden'}
+    >
+      <video
+        poster={firstVideo.preview}
+        src={firstVideo.data.max}
+        controls
+      ></video>
     </AspectRatio>
-  ) : null;
+  );
 };
 
 export default GameTrailers;

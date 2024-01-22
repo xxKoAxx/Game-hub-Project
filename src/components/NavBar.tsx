@@ -17,7 +17,7 @@ const NavBar = () => {
       zIndex={10}
     >
       <Link to='/'>
-        <Image src={logo} boxSize='3.5rem' objectFit='contain' />
+        <Image src={logo} boxSize='3.5rem' objectFit='cover' />
       </Link>
       <SearchInput />
       <ColorModeSwitch></ColorModeSwitch>

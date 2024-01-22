@@ -2,7 +2,7 @@ import ApiClient from './api-client';
 import { Genres } from './genresService';
 import { Platform } from './platformServices';
 
-interface GameDetailPlatforms {
+interface GameDetailPlatfoms {
   platform: Platform;
 }
 
@@ -16,10 +16,12 @@ export interface GameDetail {
   name: string;
   background_image: string;
   description_raw: string;
-  platforms: GameDetailPlatforms[];
+  parent_platforms: GameDetailPlatfoms[];
+  platforms: GameDetailPlatfoms[];
   metacritic: number;
   genres: Genres[];
   publishers: Publishers[];
+  playtime: number;
 }
 
 const gameDetailServices = (selectedGameId: number | string | null) => {
