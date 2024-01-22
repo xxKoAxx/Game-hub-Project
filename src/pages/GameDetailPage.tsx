@@ -1,7 +1,5 @@
 import {
   Box,
-  Flex,
-  Grid,
   GridItem,
   HStack,
   Heading,
