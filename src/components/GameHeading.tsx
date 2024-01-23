@@ -7,7 +7,7 @@ const GameHeading = () => {
   const selectedPlatform = useGameQueryStore((s) => s.selectedPlatform);
 
   return (
-    <Heading paddingX='15px'>
+    <Heading paddingX='1rem'>
       {selectedPlatform?.name} {selectedGenre?.name} Games
     </Heading>
   );

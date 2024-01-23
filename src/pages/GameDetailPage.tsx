@@ -31,7 +31,7 @@ const GameDetailPage = () => {
           columns={{ base: 1, md: 2 }}
           gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
           gap={6}
-          paddingX={{ base: '0.5rem', md: '3rem', lg: '5rem' }}
+          paddingX={{ base: '1.5rem', md: '3rem', lg: '5rem' }}
         >
           <GridItem>
             <HStack justifyContent={'center'}>

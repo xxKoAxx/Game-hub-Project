@@ -24,6 +24,9 @@ export interface GameDetail {
   playtime: number;
   released: Date;
   updated: Date;
+  rating: number;
+  rating_top: number;
+  ratings_count: number;
 }
 
 const gameDetailServices = (selectedGameId: number | string | null) => {

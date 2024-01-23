@@ -23,7 +23,7 @@ const HomePage = () => {
         </Show>
         <GridItem>
           <GameHeading />
-          <HStack margin='15px' justifyContent='space-between' gap={5}>
+          <HStack margin='1rem' justifyContent='space-between' gap={5}>
             <HStack>
               <PlatformSelector />
               <OrderBySelector />

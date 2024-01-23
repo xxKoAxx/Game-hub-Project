@@ -24,7 +24,7 @@ const GameAttributes = ({ data }: Props) => {
       columns={2}
       templateColumns={'1fr 1fr'}
       as='dl'
-      columnGap={10}
+      columnGap={{ base: 4, sm: 7, md: 10 }}
       rowGap={2}
     >
       <DefinitionItem term='Platforms' contentSide='end'>

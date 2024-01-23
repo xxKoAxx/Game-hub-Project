@@ -11,7 +11,7 @@ const NavBar = () => {
   const setDefaultValue = useGameQueryStore((s) => s.setDefaultValue);
   return (
     <HStack
-      padding='5px 10px 0 10px'
+      padding='5px 1rem 0 1rem'
       position='sticky'
       top='0'
       border='none'
