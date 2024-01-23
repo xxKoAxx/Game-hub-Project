@@ -12,6 +12,7 @@ interface GameQueryStore {
   setSelectedGenre: (selectedGenre?: Genres | null) => void;
   setSelectedPlatform: (selectedPlatform?: Platform | null) => void;
   setSelectedOrder: (selectedOrder?: string | null) => void;
+  setDefaultValue: () => void;
 }
 const defaultGameQuery = {
   selectedOrder: null,
@@ -26,6 +27,7 @@ const useGameQueryStore = create<GameQueryStore>()((set) => ({
   setSelectedGenre: (selectedGenre) => set(() => ({ selectedGenre })),
   setSelectedPlatform: (selectedPlatform) => set(() => ({ selectedPlatform })),
   setSelectedOrder: (selectedOrder) => set(() => ({ selectedOrder })),
+  setDefaultValue: () => set(() => ({ ...defaultGameQuery })),
 }));
 
 export default useGameQueryStore;

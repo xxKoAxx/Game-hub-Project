@@ -19,8 +19,8 @@ const GameTrailers = ({ selectedGameId }: Props) => {
 
   return (
     <AspectRatio
-      w={'full'}
       ratio={16 / 9}
+      w={'full'}
       borderRadius={'1rem'}
       overflow={'hidden'}
     >
@@ -28,6 +28,7 @@ const GameTrailers = ({ selectedGameId }: Props) => {
         poster={firstVideo.preview}
         src={firstVideo.data.max}
         controls
+        loop
       ></video>
     </AspectRatio>
   );

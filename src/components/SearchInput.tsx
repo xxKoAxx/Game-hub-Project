@@ -1,6 +1,11 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { BsSearch } from 'react-icons/bs';
 
 import useGameQueryStore from '../statesStore/gameQueryStore';
@@ -10,6 +15,9 @@ const SearchInput = () => {
   const searchInput = useRef<HTMLInputElement>(null);
   const setSearchQuery = useGameQueryStore((s) => s.setSearchQuery);
   const navigate = useNavigate();
+  const [onInput, setOnInput] = useState(false);
+  const bg = useColorModeValue('white', 'gray.800');
+
   return (
     <form
       onSubmit={(e) => {
@@ -26,7 +34,10 @@ const SearchInput = () => {
           ref={searchInput}
           placeholder='Search'
           borderRadius='20px'
-          variant='filled'
+          backgroundColor={onInput ? bg : ''}
+          _hover={{ backgroundColor: bg }}
+          onClick={() => setOnInput(true)}
+          onBlur={() => setOnInput(false)}
         ></Input>
       </InputGroup>
     </form>

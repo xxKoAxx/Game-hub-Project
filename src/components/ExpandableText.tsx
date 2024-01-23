@@ -11,7 +11,7 @@ const ExpandableText = ({ children, limit }: Props) => {
 
   if (children.length <= limit) return <Text>{children}</Text>;
 
-  let description = expandState ? children : children.slice(0, limit) + '...';
+  let description = expandState ? children : children.slice(0, limit) + ' ... ';
   return (
     <Text>
       {description} {expandState ? <br /> : ''}
