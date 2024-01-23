@@ -1,6 +1,6 @@
 # This is the Game Hub Project for my personal learning
 
-The deployment link: [https://game-hub-project-sand.vercel.app/](https://game-hub-project-sand.vercel.app/)
+Vercel deployment link: [https://game-hub-project-sand.vercel.app/](https://game-hub-project-sand.vercel.app/)
 
 
 # Deploy the project to local machine
